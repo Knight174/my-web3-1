@@ -52,4 +52,40 @@ EVM networks list：https://chainlist.org/
 
 ## WETH
 
+https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2
+
 WETH 的全称是 Wrapped Ether，它是以太坊（ETH）的包装代币。简单来说，WETH 将原生的以太坊币（ETH）转变为了遵循 ERC-20 标准的代币。
+
+## DAI
+
+https://etherscan.io/token/0x6b175474e89094c44da98b954eedeac495271d0f
+
+DAI 是一种稳定币，其价值与美元挂钩，1 DAI 等于 1 美元。稳定币的主要用途是提供加密市场的稳定性，因为它们保持恒定的价值，不会像其他加密货币那样波动。
+
+## ABI
+
+ABI，全称是 Application Binary Interface，中文翻译为应用程序二进制接口。在以太坊开发中，ABI 是用来在智能合约和外部程序之间进行交互的接口。
+ABI 包含两个主要部分：
+函数声明：包含函数的名称、输入参数类型、输出参数类型。
+事件声明：包含事件的名称和参数。
+
+```json
+[
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "name",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "type": "function"
+    },
+    ...
+]
+```
+
+在这个示例中，name 函数将返回一个类型为 string 的值，它不需要输入参数，同时它不接受以太币支付 (payable 为 false)。

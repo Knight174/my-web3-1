@@ -1,7 +1,3 @@
-// run `node index.js` in the terminal
-
-console.log(`Hello Node.js v${process.versions.node}!`);
-
 import { ethers } from 'ethers';
 import { config } from 'dotenv';
 
