@@ -42,3 +42,14 @@ EVM networks list：https://chainlist.org/
 - mwei 或 babbage: 1 Mwei = 10^6 wei
 - kwei 或 lovelace: 1 Kwei = 10^3 wei
 - wei: 最小单位，Wei 是 Ethereum 的最小单位。
+
+## 服务商节点
+
+服务商节点是连接区块链和用户（浏览器、脚本、后端）的桥梁，从而实现链上链下的交互。
+
+- Infura: infura.io
+- Alchemy: alchemy.com
+
+## WETH
+
+WETH 的全称是 Wrapped Ether，它是以太坊（ETH）的包装代币。简单来说，WETH 将原生的以太坊币（ETH）转变为了遵循 ERC-20 标准的代币。
