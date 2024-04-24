@@ -10,6 +10,33 @@
 
 MetaMask 钱包：可以建立多个账户，与区块链进行转账、授权等交易操作。
 
+### 账户类型
+
+以太坊中有两种账户类型：
+
+- EOA（Externally Owned Accounts，外部拥有账户）。人类控制的账户，用私钥签名交易，发送 ETH，调用智能合约等。`msg.sender`
+- 合约账户。由智能合约控制的账户，由智能合约的代码定义并控制其行为。
+
+一个钱包可以有多个账户，每个账户都有一个 hash 地址和一个私钥，可以用于主网或测试网的交易。
+
+### 公钥作用
+
+钱包账户地址（本质上是一个以太坊地址）被创建是通过对公钥取 Hash 来实现的：
+
+```
+private_key = random_bytes(32)
+public_key = private_key_to_public_key(private_key)
+address = sha3(public_key)[-20:]
+```
+
+### 私钥作用
+
+私钥用于进行签名交易，以证明这份声明来自该地址的拥有者。私钥应当保持绝对的安全和私密，一旦丢失或者被盗，那么与之相关的以太坊就有可能被盗取。
+
+### 助记词
+
+助记词是由一组通常为 12 个或 24 个单词组成的列表，它是钱包私钥的人类可读的形式。助记词是由私钥生成的，因此它可以用来恢复或备份钱包。（这是最重要的密码，不可丢失）
+
 ## 测试网
 
 Sepolia Testnet Explorer（输入账户地址，查看交易详情）：https://sepolia.etherscan.io/
@@ -17,13 +44,6 @@ Sepolia Testnet Explorer（输入账户地址，查看交易详情）：https://
 测试水龙头（免费获取测试网 ETH）：https://faucets.chain.link/
 
 EVM networks list：https://chainlist.org/
-
-## 账户类型
-
-以太坊中有两种账户类型：
-
-- EOA（Externally Owned Accounts，外部拥有账户）。人类控制的账户，用私钥签名交易，发送 ETH，调用智能合约等。`msg.sender`
-- 合约账户。由智能合约控制的账户，由智能合约的代码定义并控制其行为。
 
 ## Gas
 
