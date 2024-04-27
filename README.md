@@ -158,6 +158,7 @@ ABI 包含两个主要部分：
 ## NFT（铭文）
 
 全球最大 NFT 交易所：https://opensea.io/
+测试网版本：https://testnets.opensea.io/
 
 相关标准：ERC721 / ERC1155
 
