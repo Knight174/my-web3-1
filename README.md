@@ -88,6 +88,10 @@ EVM networks list：https://chainlist.org/
 
 ## Gas
 
+gas limit x gas price = gas fee
+
+运算单元需要运行多少次 x 每次运算需要花多少钱 = 总费用
+
 气费，在交易时需要支付的费用。该费用使用以太币（ETH）来支付，SepoliaETH 是一种仿真 ETH 币，在测试网中作为 ETH 去付费。
 
 而个人铸造的代币的本质是合约内部的一种状态记账方式，代表了钱包地址对某种资产的所有权，它并不能被以太坊节点直接接受用以支付交易费用。
