@@ -158,6 +158,7 @@ ABI 包含两个主要部分：
 ## NFT（铭文）
 
 全球最大 NFT 交易所：https://opensea.io/
+
 测试网版本：https://testnets.opensea.io/
 
 相关标准：ERC721 / ERC1155
@@ -280,3 +281,9 @@ VRF 中的 3 个函数：
 3. proof of attendance
 4. asset collateralized proof 资产质押证明
 5. membership 会员卡
+
+## IPFS（Interplanetary File System）
+
+web3 世界的存储系统。https://docs.ipfs.tech/
+
+是一种分布式的点对点文件共享系统，与常见的互联网方案（HTTP）不同。IPFS 是一种用于地址寻址，路由、传输数据的模块化协议，从底层设计原则上就考虑了内容寻址等特点。
