@@ -3,6 +3,12 @@ import { config } from 'dotenv';
 
 config();
 
+// 持续监听合约的事件
+// contract.on("eventName", function)
+
+// 只监听一次合约释放事件
+// contract.once("eventName", function)
+
 // infura API key
 const INFURA_ID = process.env.INFURA_ID;
 
