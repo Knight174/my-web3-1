@@ -75,6 +75,8 @@ const main = async () => {
     console.log(
       `Vitalik钱包中的代币余额: ${await contract.balanceOf('vitalik.eth')}`
     );
+  } else {
+    console.log('ETH不足，去水龙头领一些 Sepolia ETH');
   }
 };
 
