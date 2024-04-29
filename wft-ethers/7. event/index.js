@@ -23,7 +23,7 @@ const abiWETH = [
   'event Transfer(address indexed from, address indexed to, uint amount)',
 ];
 // 测试网WETH地址
-const addressWETH = '0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6';
+const addressWETH = '0xb16F35c0Ae2912430DAc15764477E179D9B9EbEa';
 
 // 声明合约实例
 const contract = new ethers.Contract(addressWETH, abiWETH, provider);
@@ -37,7 +37,7 @@ const main = async () => {
   console.log(`打印事件详情:`);
   const transferEvents = await contract.queryFilter(
     'Transfer',
-    block - 100,
+    block - 10,
     block
   );
   transferEvents.forEach((event, index) =>
