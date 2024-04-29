@@ -287,3 +287,40 @@ VRF 中的 3 个函数：
 web3 世界的存储系统。https://docs.ipfs.tech/
 
 是一种分布式的点对点文件共享系统，与常见的互联网方案（HTTP）不同。IPFS 是一种用于地址寻址，路由、传输数据的模块化协议，从底层设计原则上就考虑了内容寻址等特点。
+
+## ERC20
+
+ERC20 是一种在以太坊网络上定义的代币标准。它定义了代币的传输方法，并允许代币以一种统一的方式在区块链上进行交互。由于其广泛的可兼容性，现在在世界范围内的许多代币都使用此标准。
+
+具体来说，ERC20 定义了一些主要函数设置，包括：
+
+- totalSupply(): 返回代币的总供应量。
+  balanceOf(address account): 返回某个地址(账户)当前拥有的代币数额。
+- transfer(address recipient, uint256 amount): 把某个数量的代币从整个交易的发起者转移到某个账户。
+  approve(address spender, uint256 amount): 允许 spender 从交易发起方账户中取出数量为 amount 的代币。
+- allowance(address owner, address spender): 返回 spender 还剩余可提取的代币的数量。
+- transferFrom(address sender, address recipient, uint256 amount): 允许一个账户（对应之前的 spender）转移数量为 amount 的代币到另一个账户。
+  此外，ERC20 标准还需实现两个事件:
+- Transfer: 在任何代币数量的转账成功时都必须要触发。
+- Approval: 在调用 approve 函数以允许值为\_value 的代币从\_owner 账户转移到\_spender 账户时触发。
+
+ERC20 代币可以应用在各种业务场景中，如代表投票权的权益代币，或是代表公司股权的证券代币等。
+
+## ERC721
+
+ERC721 是一种在以太坊上的非同质化代币(non-fungible token，简称 NFT)的标准。每个 ERC721 代币都是唯一的，可以被认为是一种在区块链上的收藏品。与 ERC20 代币不同，这些代币不能直接交换，因为每一个都有独特的值和信息。
+
+以下是 ERC721 代币必须实现的一些关键函数：
+
+- balanceOf(address \_owner)： 获取给定地址的代币数量。
+- ownerOf(uint256 \_tokenId)： 显示给定代币的所有者。
+- transferFrom(address \_from, address \_to, uint256 \_tokenId) ：从一个地址向另一个地址转移代币。
+- approve(address \_approved, uint256 \_tokenId): 授权第三方转移特定的代币。
+- getApproved(uint256 \_tokenId): 获取特定代币当前授权的地址。
+
+ERC721 标准还包含了两个主要的事件：
+
+- Transfer(address from, address to, uint256 tokenId): 表示所有权的转移，当代币被创建、转移或销毁时都必须触发此事件。
+- Approval(address owner, address approved, uint256 tokenId): 表示某个账户被授权管理 tokenId（代币 ID），每次授权变动都必须触发此事件。
+
+ERC721 代币广泛应用于包括艺术品、域名、虚拟房地产和虚拟商品在内的数字所有权的表示和交易中，最知名的例子就是 CryptoKitties，这是一款允许玩家购买、收集、繁殖和出售虚拟猫的游戏。
