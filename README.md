@@ -47,6 +47,22 @@ https://www.openzeppelin.com/contracts
 
 **OpenZeppelin Contracts 是其的一个开放式库，专门用于智能合约的开发。** 通过这个库，开发者可以构建和测试安全的智能合约。具体包括支持 ERC20，ERC777，ERC721 和 ERC1155 的标准合约，此外它还提供许多模块让用户自定义以满足特定需求。
 
+代码库：https://github.com/OpenZeppelin/openzeppelin-contracts
+
+安装标准：
+
+```bash
+# hardhat
+npm install @openzeppelin/contracts --save-dev
+# foundry
+forge install OpenZeppelin/openzeppelin-contracts
+```
+
+- token：包含 ERC20、ERC721、ERC777、ERC1155 代币
+- access：合约函数访问控制功能
+- utils：实现一些工具库，如判断是否为合约地址、数字函数等。
+- proxy：升级代理。
+
 ## MetaMask
 
 MetaMask 钱包：可以建立多个账户，与区块链进行转账、授权等交易操作。
@@ -88,7 +104,11 @@ address = sha3(public_key)[-20:]
 
 Sepolia Testnet Explorer（输入账户地址，查看交易详情）：https://sepolia.etherscan.io/
 
-测试水龙头（免费获取测试网 ETH）：https://faucets.chain.link/
+测试水龙头（免费获取测试网 ETH）：
+
+- https://faucets.chain.link/
+
+- https://cloud.google.com/application/web3/faucet/ethereum/sepolia
 
 EVM networks list：https://chainlist.org/
 
@@ -357,6 +377,10 @@ ERC721 标准还包含了两个主要的事件：
 
 ERC721 代币广泛应用于包括艺术品、域名、虚拟房地产和虚拟商品在内的数字所有权的表示和交易中，最知名的例子就是 CryptoKitties，这是一款允许玩家购买、收集、繁殖和出售虚拟猫的游戏。
 
+## ERC777
+
+？
+
 ## 空投
 
 空投（Airdrop）是一种在区块链行业中常见的营销策略，指的是免费将一种加密货币或代币发放（或者说“投放”）到用户的加密货币钱包中。空投的目的多种多样，可以是鼓励用户去使用新的加密货币、奖励长期持有某种货币的用户、吸引新用户、分散代币的持有人等等。
@@ -370,5 +394,16 @@ DEX Swap 是指在去中心化交易所(Decentralized Exchange, DEX)上进行的
 这个过程中，用户可以直接在区块链网络上交换两种不同的代币，并不需要通过中心化的第三方机构。操作流程一般是，用户将一种代币发送到智能合约，然后智能合约会将另一种等价值的代币发送到用户的钱包。
 
 Uniswap 和 Sushiswap 是两个知名的使用自动做市商（Automated Market Maker, AMM）模型的去中心化交易所。在这种模型中，任何人都可以向智能合约中存入代币以提供流动性，并可以获得交易费用的一部分作为奖励。
- 
+
 总的来说，DEX Swap 提供了一种无需信任、无需经过中心化机构审核的交易方式，大大提高了交易的自由和便捷性。
+
+## address(this)
+
+指的是当前执行的合约自己的地址。这是一个重要的概念，因为合约可以像普通的 Ethereum 账户一样拥有和转移 Ether (ETH)以及其他基于 ERC-20 或 ERC-721 的代币。
+
+```sol
+function getBalance() public view returns (uint) {
+  // 返回以 wei 为单位的这个合约的 ETH 数量
+  return address(this).balance;
+}
+```
